@@ -140,4 +140,8 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/windows,pycharm
 .vs/
 Debug/
+열혈강의 C++/Debug/
+열혈강의 C++/열혈강의 C++.vcxproj
+열혈강의 C++/열혈강의 C++.vcxproj.filters
+열혈강의 C++/열혈강의 C++.vcxproj.user
 열혈강의 C++.sln
