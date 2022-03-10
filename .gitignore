@@ -144,4 +144,6 @@ Debug/
 열혈강의 C++/열혈강의 C++.vcxproj
 열혈강의 C++/열혈강의 C++.vcxproj.filters
 열혈강의 C++/열혈강의 C++.vcxproj.user
-열혈강의 C++.sln
+*.sln
+*.vcxproj
+cab42
