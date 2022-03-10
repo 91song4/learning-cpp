@@ -29,7 +29,6 @@ public:
 int main(void)
 {
 	const SoSimple obj(7);	//const 梓端 持失
-	SoSimple obj2(7);	//const 梓端 持失
 	//obj.AddNum(20);
 	obj.ShowData();
 	return 0;
