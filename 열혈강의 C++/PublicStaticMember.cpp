@@ -23,7 +23,7 @@ int main(void)
 	cout << SoSimple::simObjCnt << "번째 SoSimple 객체" << endl;	// 객체가 생성되지 않았지만 static 변수에 접근
 	SoSimple sim1;
 	SoSimple sim2;
-
+	
 	cout << SoSimple::simObjCnt << "번째 SoSimple 객체" << endl;
 	cout << sim1.simObjCnt << "번째 SoSimple 객체" << endl;		// 객체를 통해서도 static 변수에 접근
 	cout << sim2.simObjCnt << "번째 SoSimple 객체" << endl;
