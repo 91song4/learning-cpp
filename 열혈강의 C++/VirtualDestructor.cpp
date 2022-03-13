@@ -12,7 +12,12 @@ public:
 		: strOne(new char[strlen(str) + 1])
 	{}
 
-	~First()
+	/*~First()
+	{
+		cout << "~First()" << endl;
+		delete[] strOne;
+	}*/
+	virtual ~First()
 	{
 		cout << "~First()" << endl;
 		delete[] strOne;
@@ -43,3 +48,6 @@ int main(void)
 	delete ptr;
 	return 0;
 }
+
+// Second 클래스의 소멸자가 호출되지 않는다.
+// 가상소멸자를 선언하여 소멸자를 모두 호출한다.
