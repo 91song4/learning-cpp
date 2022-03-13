@@ -15,13 +15,9 @@ public:
 		cout << "name: " << name << endl;
 	}
 
-	virtual int GetPay() const
-	{
-		return 0;
-	}
+	virtual int GetPay() const = 0;
 
-	virtual void ShowSalaryInfo() const
-	{}
+	virtual void ShowSalaryInfo() const = 0;
 
 public:
 	Employee(const char* name)
