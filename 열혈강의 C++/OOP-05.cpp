@@ -16,10 +16,6 @@ private:
 
 public:
 	int GetAccId() const { return accID; }
-	char* GetCusName()
-	{
-		return cusName;
-	}
 	void Deposit(int money) { balance += money; }
 	int Withdraw(int money);	// 출금액 반환, 부족 시 0 반환
 	void ShowAccInfo() const;
@@ -27,7 +23,7 @@ public:
 public:
 	Account(int ID, int money, char* name);
 	Account(const Account& copy);
-	//~Account() { delete[] cusName; }
+	~Account() { delete[] cusName; }
 };
 
 class AccountHandler
@@ -48,9 +44,7 @@ public:
 	{
 		for (int i = 0; i < accNum; ++i)
 		{
-			//char* ptr = accArr[i]->GetCusName();
-			delete[] accArr[i]->GetCusName();
-			delete[] accArr[i];
+			delete accArr[i];
 		}
 	}
 };
