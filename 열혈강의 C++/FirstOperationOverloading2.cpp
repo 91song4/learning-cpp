@@ -26,7 +26,7 @@ public:
 	void ShowData() { cout << num3 << ", " << num4 << endl; }
 
 public:
-	Second operator=(const Second& ref)
+	Second& operator=(const Second& ref)
 	{
 		cout << "Second& operator=()" << endl;
 		num3 = ref.num3;
