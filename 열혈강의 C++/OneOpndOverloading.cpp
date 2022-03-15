@@ -40,7 +40,7 @@ int main(void)
 
 	++(++pos);
 	pos.ShowPosition();
-	--(++pos);
+	--(--pos);
 	pos.ShowPosition();
 	return 0;
 }
