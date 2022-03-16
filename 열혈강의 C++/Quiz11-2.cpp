@@ -78,8 +78,37 @@ public:
 	}
 };
 
+class BoundCheck2DIntArray
+{
+private:
+	int** arr2D;
+
+public:
+	int* operator[](int idx)
+	{
+		return arr2D[idx];
+	}
+
+public:
+	BoundCheck2DIntArray(int x, int y)
+	{
+		arr2D = new int*[x];
+		for (int i = 0; i < x; ++i)
+		{
+			arr2D[i] = new int[y];
+		}
+	}
+	
+	~BoundCheck2DIntArray()
+	{
+		delete[] arr2D;
+	}
+};
+
 int main(void)
 {
+	// 문제 1.
+	{
 	BoundCheckIntArray arr(3);
 	arr[0] = new Point(3, 4);
 	arr[1] = new Point(5, 6);
@@ -91,5 +120,21 @@ int main(void)
 	delete arr[0];
 	delete arr[1];
 	delete arr[2];
+	}
+
+	// 문제 2.
+	{
+		BoundCheck2DIntArray arr2d(4, 5);
+		for (int n = 0; n < 4; n++)
+			for (int m = 0; m < 5; m++)
+			arr2d[n][m] = n + m;
+
+		for (int n = 0; n < 4; n++)
+		{
+			for (int m = 0; m < 5; m++)
+				cout << arr2d[n][m] << ' ';
+			cout << endl;
+		}
+	}
 	return 0;
 }
