@@ -121,6 +121,9 @@ void AccountHandler::ShowAllAccInfo(void) const
 	}
 }
 
+AccountHandler::AccountHandler(void)
+	:accArr(100)
+{}
 
 AccountHandler::~AccountHandler(void)
 {

@@ -34,3 +34,15 @@ Account::Account(const Account& copy)
 	cusName = new char[len];
 	strcpy_s(cusName, len, copy.cusName);
 }
+
+Account& Account::operator=(const Account& copy)
+{
+	delete[] cusName;
+	
+	cusName = new char[strlen(copy.cusName) + 1];
+	strcpy_s(cusName, strlen(copy.cusName) + 1, copy.cusName);
+
+	accID = copy.accID;
+	balance = copy.balance;
+	return *this;
+}

@@ -14,6 +14,9 @@ public:
 	virtual void ShowAccInfo() const;
 
 public:
+	Account& operator=(const Account& copy);
+
+public:
 	Account(int ID, int money, char* name);
 	Account(const Account& copy);
 	~Account() { delete[] cusName; }
