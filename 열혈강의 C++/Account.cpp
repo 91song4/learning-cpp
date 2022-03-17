@@ -21,27 +21,17 @@ void Account::ShowAccInfo() const
 Account::Account(int ID, int money, char* name)
 	: accID(ID)
 	, balance(money)
-{
-	int len = strlen(name) + 1;
-	cusName = new char[len];
-	strcpy_s(cusName, len, name);
-}
+	, cusName(name)
+{}
 Account::Account(const Account& copy)
 	: accID(copy.accID)
 	, balance(copy.balance)
-{
-	int len = strlen(copy.cusName) + 1;
-	cusName = new char[len];
-	strcpy_s(cusName, len, copy.cusName);
-}
+	, cusName(copy.cusName)
+{}
 
 Account& Account::operator=(const Account& copy)
 {
-	delete[] cusName;
-	
-	cusName = new char[strlen(copy.cusName) + 1];
-	strcpy_s(cusName, strlen(copy.cusName) + 1, copy.cusName);
-
+	cusName = copy.cusName;
 	accID = copy.accID;
 	balance = copy.balance;
 	return *this;

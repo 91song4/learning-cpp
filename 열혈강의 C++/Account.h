@@ -1,11 +1,13 @@
 #ifndef __Account_h__
 #define __Account_h__
+#include"String.h"
+
 class Account
 {
 private:
 	int accID;		// °èÁÂ¹øÈ£
 	int balance;	// ÀÜ¾×
-	char* cusName;	// °í°´ÀÌ¸§
+	String cusName;	// °í°´ÀÌ¸§
 
 public:
 	int GetAccId() const { return accID; }
@@ -19,7 +21,7 @@ public:
 public:
 	Account(int ID, int money, char* name);
 	Account(const Account& copy);
-	~Account() { delete[] cusName; }
+	~Account() {}
 };
 
 #endif
