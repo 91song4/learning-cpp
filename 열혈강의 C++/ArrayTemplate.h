@@ -18,7 +18,7 @@ public:
 
 public:
 	T& operator[](int idx);
-	T& operator[](int idx) const;
+	T operator[](int idx) const;
 
 public:
 	BoundCheckArray(int len);
@@ -43,7 +43,7 @@ T& BoundCheckArray<T>::operator[](int idx)
 }
 
 template<class T>
-T& BoundCheckArray<T>::operator[](int idx) const
+T BoundCheckArray<T>::operator[](int idx) const
 {
 	if (idx < 0 || idx >= arrlen)
 	{
