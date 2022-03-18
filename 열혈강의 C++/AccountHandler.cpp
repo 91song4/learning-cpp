@@ -1,6 +1,4 @@
-#include"Account.h"
 #include"AccountHandler.h"
-#include"BankingCommonDecl.h"
 #include"NormalAccount.h"
 #include"HighCreditAccount.h"
 
