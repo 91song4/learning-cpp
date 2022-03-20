@@ -1,6 +1,4 @@
 #include"AccountHandler.h"
-#include"NormalAccount.h"
-#include"HighCreditAccount.h"
 
 
 void AccountHandler::ShowMenu(void)
@@ -65,13 +63,15 @@ void AccountHandler::MakeHighCreditAccount(void)
 	accArr[accNum++] = new HighCreditAccount(id, balance, name, rating);
 }
 
-void AccountHandler::DepositMoney(void)
+void AccountHandler::DepositMoney(void) throw(DepositException)
 {
 	int money;
 	int id;
 	cout << "[입 금]" << endl;
 	cout << "계좌ID: "; cin >> id;
 	cout << "입금액: "; cin >> money;
+	if(0>=money)
+		throw DepositException();
 
 	for (int i = 0; i < accNum; i++)
 	{
@@ -85,7 +85,7 @@ void AccountHandler::DepositMoney(void)
 	cout << "유효하지 않은 ID 입니다." << endl << endl;
 }
 
-void AccountHandler::WithdrawMoney(void)
+void AccountHandler::WithdrawMoney(void) throw(WithdrawException)
 {
 	int money;
 	int id;
@@ -99,8 +99,7 @@ void AccountHandler::WithdrawMoney(void)
 		{
 			if (accArr[i]->Withdraw(money) == 0)
 			{
-				cout << "잔액부족" << endl << endl;
-				return;
+				throw WithdrawException();
 			}
 
 			cout << "출금완료" << endl << endl;

@@ -1,7 +1,11 @@
 #ifndef __AccountHandler_h__
 #define __AccountHandler_h__
-#include"BoundCheckArray.h"
 #include"Account.h"
+#include"BoundCheckArray.h"
+#include"NormalAccount.h"
+#include"HighCreditAccount.h"
+#include"Exception.h"
+
 
 class AccountHandler
 {
@@ -14,8 +18,8 @@ public:
 	void MakeAccount(void);
 	void MakeNormalAccount(void);
 	void MakeHighCreditAccount(void);
-	void DepositMoney(void);
-	void WithdrawMoney(void);
+	void DepositMoney(void) throw(DepositException);
+	void WithdrawMoney(void) throw(WithdrawException);
 	void ShowAllAccInfo(void) const;
 
 public:
